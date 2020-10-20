@@ -4,10 +4,10 @@ E:\repos\Barber-db-seed-generator\Barber-db-seed-generator\bin\Debug\netcoreapp3
 E:\repos\Barber-db-seed-generator\Barber-db-seed-generator\bin\Debug\netcoreapp3.1\Barber-db-seed-generator.runtimeconfig.dev.json
 E:\repos\Barber-db-seed-generator\Barber-db-seed-generator\bin\Debug\netcoreapp3.1\Barber-db-seed-generator.dll
 E:\repos\Barber-db-seed-generator\Barber-db-seed-generator\bin\Debug\netcoreapp3.1\Barber-db-seed-generator.pdb
-E:\repos\Barber-db-seed-generator\Barber-db-seed-generator\obj\Debug\netcoreapp3.1\Barber-db-seed-generator.csprojAssemblyReference.cache
 E:\repos\Barber-db-seed-generator\Barber-db-seed-generator\obj\Debug\netcoreapp3.1\Barber-db-seed-generator.AssemblyInfoInputs.cache
 E:\repos\Barber-db-seed-generator\Barber-db-seed-generator\obj\Debug\netcoreapp3.1\Barber-db-seed-generator.AssemblyInfo.cs
 E:\repos\Barber-db-seed-generator\Barber-db-seed-generator\obj\Debug\netcoreapp3.1\Barber-db-seed-generator.csproj.CoreCompileInputs.cache
 E:\repos\Barber-db-seed-generator\Barber-db-seed-generator\obj\Debug\netcoreapp3.1\Barber-db-seed-generator.dll
 E:\repos\Barber-db-seed-generator\Barber-db-seed-generator\obj\Debug\netcoreapp3.1\Barber-db-seed-generator.pdb
 E:\repos\Barber-db-seed-generator\Barber-db-seed-generator\obj\Debug\netcoreapp3.1\Barber-db-seed-generator.genruntimeconfig.cache
+E:\repos\Barber-db-seed-generator\Barber-db-seed-generator\obj\Debug\netcoreapp3.1\Barber-db-seed-generator.csprojAssemblyReference.cache

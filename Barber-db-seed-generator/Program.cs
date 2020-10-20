@@ -1,13 +1,11 @@
-﻿using System;
-
-namespace Barber_db_seed_generator
+﻿namespace Barber_db_seed_generator
 {
     class Program
     {
         static void Main(string[] args)
         {
-            NameGenerator ng = new NameGenerator();
-            ng.GenerateFile();
+           var seedData = new SeedDataFileCreator(new DataGeneratorService());
+           seedData.CreateFile();
         }
     }
 }
