@@ -6,6 +6,7 @@ namespace Barber_db_seed_generator
 {
     public interface IDataGeneratorService
     {
+        public List<Studio> GetStudiosList();
         List<Employee> GetEmployeesList();
         List<Visit> GetVisitsList(int number);
         List<Treatment> GetTreatmentsList();

@@ -15,13 +15,18 @@ namespace Barber_db_seed_generator
 
         public void StudioSeed(StreamWriter at)
         {
+            var studios = _dataGeneratorService.GetStudiosList();
+            
             at.WriteLine("SET IDENTITY_INSERT barber.Studio ON");
             at.WriteLine();
-            at.WriteLine("INSERT INTO barber.Studio (Studio_ID, StudioName, StudioAddress, PhoneNumber, NumberOfEmployees) VALUES (1, 'Hair o rama', 'Old Road 57', '555 13 17 16', 3)");
-            at.WriteLine("INSERT INTO barber.Studio (Studio_ID, StudioName, StudioAddress, PhoneNumber, NumberOfEmployees) VALUES (2, 'Hair do', 'Main Street 34', '555 14 15 16', 4)");
-            at.WriteLine("INSERT INTO barber.Studio (Studio_ID, StudioName, StudioAddress, PhoneNumber, NumberOfEmployees) VALUES (3, 'Yer hair', 'Old Branch 40', '554 18 19 17', 3)");
-            at.WriteLine("INSERT INTO barber.Studio (Studio_ID, StudioName, StudioAddress, PhoneNumber, NumberOfEmployees) VALUES (4, 'Five o hair', 'London Street 33', '457 89 65 85', 2)");
-            at.WriteLine("INSERT INTO barber.Studio (Studio_ID, StudioName, StudioAddress, PhoneNumber, NumberOfEmployees) VALUES (5, 'Hair hair hair', 'Village Ave 23', '478 56 96 85', 3)");
+
+            foreach (var s in studios)
+            {
+                at.WriteLine(
+                    "INSERT INTO barber.Studio (Studio_ID, StudioName, StudioAddress, PhoneNumber, NumberOfEmployees) " +
+                    $"VALUES ({s.Studio_ID}, '{s.StudioName}', '{s.Address}', '{s.PhoneNumber}', {s.NumberOfEmployees})");
+            }
+            
             at.WriteLine("SET IDENTITY_INSERT barber.Studio OFF");
             at.WriteLine();
             at.WriteLine();
@@ -51,7 +56,8 @@ namespace Barber_db_seed_generator
             foreach (var t in treatments)
             {
                 at.WriteLine("INSERT INTO barber.Treatment (Treatment_ID, TreatmentName, Price, DurationHours)" +
-                             $"VALUES ({t.Treatment_ID}, '{t.TreatmentName}', {t.Price.ToString(CultureInfo.CurrentCulture).Replace(',','.')}, {t.DurationHours})");
+                             $"VALUES ({t.Treatment_ID}, '{t.TreatmentName}', " +
+                             $"{t.Price.ToString(CultureInfo.CurrentCulture).Replace(',','.')}, {t.DurationHours})");
             }
             
             at.WriteLine("SET IDENTITY_INSERT barber.Treatment OFF");
@@ -76,7 +82,7 @@ namespace Barber_db_seed_generator
         }
         public void CreateFile()
         {
-            string path = @"E:\repos\stash\employeeSeed.sql";
+            const string path = @"E:\repos\stash\employeeSeed.sql";
 
             var at = new StreamWriter(path, true);
 
