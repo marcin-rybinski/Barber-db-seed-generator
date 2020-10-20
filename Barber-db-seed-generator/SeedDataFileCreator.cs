@@ -80,9 +80,26 @@ namespace Barber_db_seed_generator
             at.WriteLine();
             at.WriteLine();
         }
+
+        public void VisitDetailSeed(StreamWriter at)
+        {
+            var visitDetails = _dataGeneratorService.GetVisitDetailsList();
+            at.WriteLine("SET IDENTITY_INSERT barber.VisitDetail ON");
+            at.WriteLine();
+
+            foreach (var v in visitDetails)
+            {
+                at.WriteLine("INSERT INTO barber.VisitDetail (VisitDetail_ID, Visit_ID, Treatment_ID, TotalCost)" +
+                             $"VALUES ({v.VisitDetail_ID}, '{v.Visit_ID}', {v.Treatment_ID}, {v.TotalCost.ToString(CultureInfo.CurrentCulture).Replace(',', '.')})");
+            }
+
+            at.WriteLine("SET IDENTITY_INSERT barber.VisitDetail OFF");
+            at.WriteLine();
+            at.WriteLine();
+        }
         public void CreateFile()
         {
-            const string path = @"E:\repos\stash\employeeSeed.sql";
+            const string path = @"..\..\..\..\BarberSeedData.sql";
 
             var at = new StreamWriter(path, true);
 
@@ -94,7 +111,7 @@ namespace Barber_db_seed_generator
             EmployeeSeed(at);
             TreatmentSeed(at);
             VisitSeed(at);
-
+            VisitDetailSeed(at);
 
             at.Dispose();
         }
