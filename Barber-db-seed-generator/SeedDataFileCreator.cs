@@ -71,10 +71,10 @@ namespace Barber_db_seed_generator
             foreach (var v in visits)
             {
 
-                at.WriteLine("INSERT INTO barber.Visit (Visit_ID, Studio_ID, Employee_ID, DateAndTime, " +
+                at.WriteLine("INSERT INTO barber.Visit (Visit_ID, Studio_ID, Employee_ID, [Date], [Time], " +
                              "DurationHours) " +
-                             $"VALUES ('{v.Visit_ID}', {v.Studio_ID}, '{v.Employee_ID}', '{v.DateAndTime.ToString(new CultureInfo("en-US", false))}', " +
-                             $"{v.Duration})");
+                             $"VALUES ('{v.Visit_ID}', {v.Studio_ID}, '{v.Employee_ID}', '{v.DateAndTime.Month}/{v.DateAndTime.Day}/{v.DateAndTime.Year}', " +
+                             $"'{v.DateAndTime.Hour}:{v.DateAndTime.Minute}', {v.Duration})");
             }
 
             at.WriteLine();
